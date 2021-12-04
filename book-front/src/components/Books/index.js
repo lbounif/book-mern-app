@@ -14,7 +14,7 @@ const Books = ({ styles }) => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get("http://localhost:8080/books");
+        const response = await axios.get("http://localhost:4000/books");
         console.log("response is: ", response)
         if (!response || response.status !== 200)
           return dispatch({ type: "SET_BOOKS", payload: [] });

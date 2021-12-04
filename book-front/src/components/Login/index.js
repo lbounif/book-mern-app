@@ -7,7 +7,7 @@ const Login = ({ setToken }) => {
   const [password, setPassword] = useState();
 
   const loginUser = async(credentials) => {
-    return fetch('http://localhost:8080/login', {
+    return fetch('http://localhost:4000/login', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'

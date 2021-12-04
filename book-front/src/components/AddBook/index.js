@@ -9,7 +9,7 @@ const AddBook = () => {
 
   const postData = async (newBook) => {
     try {
-      const response = await axios.post("http://localhost:8080/books", newBook);
+      const response = await axios.post("http://localhost:4000/books", newBook);
       if (!response || response.status !== 201)
         return dispatch({ type: "SET_ERR", payload: "FAILED TO ADD" });
       console.log(response.data);
