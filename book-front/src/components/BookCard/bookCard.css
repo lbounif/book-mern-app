@@ -1,0 +1,65 @@
+.book-card-container {
+  display: flex;
+  background-color: white;
+  width: 30vw;
+  height: fit-content;
+  margin: 30px 20px;
+  padding: 0px 15px;
+  box-shadow: 3px 6px 35px -3px rgba(143, 143, 143, 1);
+}
+.book-content {
+  padding: 15px 18px;
+  width: 100%;
+}
+.book-title {
+  font-weight: 600;
+  font-size: 16px;
+}
+.book-author {
+  color: grey;
+  margin-bottom: 6px;
+}
+.rating-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  width: 100%;
+}
+.book-voters {
+  color: #bbbbbb;
+  font-size: 12px;
+}
+.book-description {
+  color: grey;
+  font-size: 13px;
+  text-align: justify;
+  font-weight: 600;
+  height: 60px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.book-img-container {
+  position: relative;
+  top: -25px;
+}
+
+@media only screen and (max-width: 1200px) {
+  .book-card-container {
+    width: 60vw;
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  .book-card-container {
+    flex-direction: column;
+  }
+  .rating-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .book-img-container {
+    justify-content: center;
+    display: flex;
+  }
+}

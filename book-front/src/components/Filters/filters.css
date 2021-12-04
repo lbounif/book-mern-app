@@ -1,0 +1,14 @@
+.filters-container {
+  background-color: #1d1d1d;
+  padding-top: 20px;
+  position: sticky;
+  top: 40vh;
+}
+.filters-header {
+  color: white;
+  text-align: center;
+  font-size: 30px;
+}
+.filters {
+  margin: 15px 30px;
+}

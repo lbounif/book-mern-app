@@ -1,0 +1,10 @@
+.books-container {
+  min-height: 60vh;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding-top: 30px;
+}
+.add-book-container {
+  padding: 20px;
+}

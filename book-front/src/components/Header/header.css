@@ -1,0 +1,14 @@
+.header {
+  height: 40vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+  font-size: 40px;
+  color: white;
+  font-weight: 600;
+  width: 100%;
+  background-image: url("../../assets/stanislav-kondratiev-6pO3QFkk7hQ-unsplash.jpg");
+  background-size: cover;
+  background-position: center;
+}
