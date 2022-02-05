@@ -13,7 +13,7 @@ pipeline {
     stage('test') {
       steps {
         nodejs(nodeJSInstallationName: 'nodejs') {
-        sh 'npm --prefix ./book-api/package.json install'
+        sh 'npm --prefix ./book-api install'
         sh 'npm --prefix ./book-api test'
       }
     }
