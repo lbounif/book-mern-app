@@ -20,7 +20,7 @@ pipeline {
    }
   stage('Publish image to Docker Hub') {
     steps {
-        withDockerRegistry([ credentialsId: "dockerhub", url: "" ]) {
+        withDockerRegistry([ credentialsId: "dockerhub", url: "" ]) { //dockerhub is the name of credentials in Jenkins
             sh 'docker build -f book-api/Dockerfile -t lbounif/book-api .'
             sh 'docker run -dp 4001:4000 lbounif/book-api'
             sh  'docker push lbounif/book-api'
