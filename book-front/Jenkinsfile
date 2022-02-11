@@ -12,8 +12,10 @@ pipeline {
     }
     stage('build') {
       steps {
+        nodejs(nodeJSInstallationName: 'nodejs') {
         sh 'npm --prefix ./book-front install'
         sh 'npm --prefix ./book-front run build'
+      }
     }
    }
   stage('Publish image to Docker Hub') {
