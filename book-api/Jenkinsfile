@@ -14,7 +14,7 @@ pipeline {
       steps {
         nodejs(nodeJSInstallationName: 'nodejs') {
         sh 'npm --prefix ./book-api install'
-        // sh 'npm --prefix ./book-api test'
+        sh 'npm --prefix ./book-api test'
       }
     }
    }
