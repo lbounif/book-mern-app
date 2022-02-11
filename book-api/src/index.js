@@ -13,6 +13,7 @@ app.use(bookRouter)
 
 //3. Define a port
 const port = process.env.APP_PORT || 4000
+
 console.log(`port is: ${port}`)
 //4. Listen to the port
 app.listen(port, () => {
