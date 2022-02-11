@@ -18,14 +18,14 @@ pipeline {
       }
     }
    }
-  // stage('Publish image to Docker Hub') {
-  //   steps {
-  //       withDockerRegistry([ credentialsId: "dockerhub", url: "" ]) {
-  //           sh 'docker build -t lbounif/book-api .'
-  //           sh 'docker run -dp 4001:4000 lbounif/book-api'
-  //           sh  'docker push lbounif/book-api'
-  //       }
-  //     }
-  //   }
+  stage('Publish image to Docker Hub') {
+    steps {
+        withDockerRegistry([ credentialsId: "dockerhub", url: "" ]) {
+            sh 'docker build -t lbounif/book-api .'
+            sh 'docker run -dp 4001:4000 lbounif/book-api'
+            sh  'docker push lbounif/book-api'
+        }
+      }
+    }
   }
 }
