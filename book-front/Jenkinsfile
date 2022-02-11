@@ -1,0 +1,29 @@
+//declarative pipeline
+pipeline {
+  agent any
+  // def commit_id
+  stages {
+    stage('Preparation') {
+      steps {
+         checkout scm
+        //  sh "git rev-parse --short HEAD > .git/commit-id"                        
+        //  commit_id = readFile('.git/commit-id').trim()
+      }
+    }
+    stage('build') {
+      steps {
+        sh 'npm install'
+        sh 'npm run build'
+    }
+   }
+  stage('Publish image to Docker Hub') {
+    steps {
+        withDockerRegistry([ credentialsId: "dockerhub", url: "" ]) {
+            sh 'cd ..'
+            sh 'docker-compose up -d'
+            sh  'docker push lbounif/book-front'
+        }
+      }
+    }
+  }
+}
