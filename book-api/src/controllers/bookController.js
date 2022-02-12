@@ -43,12 +43,12 @@ const getBooks = async(req, res) => {
 
 //find a book by id
 const getBookById = async (req, res) => {
-    console.log(req)
+    // console.log(req)
     const id = req.params.id
     try {
         const book = await Book.findById(id)
         if(!book) {
-            res.status(404).json({
+            return res.status(404).json({
                 message: "Book not found ",
                 data: {}
             })
@@ -94,14 +94,14 @@ const updateBook = async(req, res) => {
 }
 const deleteBook = async(req, res) => {
     const id = req.params.id
-    if(!id) res.status(400).json({
+    if(!id) return res.status(400).json({
         message: "Bad parameter",
         data: {}
     })
     try {
         const book = await Book.findById(id)
         if(!book) {
-            res.status(404).json({
+            return res.status(404).json({
                 message: "Book not found ",
                 data: {}
             })

@@ -16,14 +16,14 @@ pipeline {
       }
     }
    }
-  // stage('Publish image to Docker Hub') {
-  //   steps {
-  //       // withDockerRegistry([ credentialsId: "dockerhub", url: "" ]) {
-  //       //     sh 'docker build -f book-front/Dockerfile -t lbounif/book-front .'
-  //       //     sh 'docker run -dp 3001:3000 lbounif/book-front'
-  //       //     sh  'docker push lbounif/book-front'
-  //       // }
-  //     }
-  //   }
+  stage('Publish image to Docker Hub') {
+    steps {
+        // withDockerRegistry([ credentialsId: "dockerhub", url: "" ]) {
+        //     sh 'docker build -f book-front/Dockerfile -t lbounif/book-front .'
+        //     sh 'docker run -dp 3001:3000 lbounif/book-front'
+        //     sh  'docker push lbounif/book-front'
+        // }
+      }
+    }
   }
 }
