@@ -20,10 +20,10 @@ pipeline {
         projectId: 'AYWIW8FtckqGIZcSgBBj-w', 
         testId: 'kMwwU-zmYUuHSUzHuhGqbQ', 
         waitTestFinishSeconds: 120
-        nodejs(nodeJSInstallationName: 'nodejs') {
-        sh 'npm --prefix ./book-api install'
-        sh 'npm --prefix ./book-api test'
-      }
+      //   nodejs(nodeJSInstallationName: 'nodejs') {
+      //   sh 'npm --prefix ./book-api install'
+      //   // sh 'npm --prefix ./book-api test'
+      // }
     }
    }
   // stage('Publish image to Docker Hub') {
