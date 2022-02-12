@@ -12,6 +12,14 @@ pipeline {
     }
     stage('test') {
       steps {
+        tpTestRun agentId: 'q_SE8dpsLUaDF5VE-yYHqw', 
+        browser: 'Chrome', 
+        device: '', 
+        executionParameters: '', 
+        junitResultsFile: '', 
+        projectId: 'AYWIW8FtckqGIZcSgBBj-w', 
+        testId: 'kMwwU-zmYUuHSUzHuhGqbQ', 
+        waitTestFinishSeconds: 120
         nodejs(nodeJSInstallationName: 'nodejs') {
         sh 'npm --prefix ./book-api install'
         sh 'npm --prefix ./book-api test'
