@@ -1,0 +1,87 @@
+kind: Deployment
+metadata:
+  name: mongo
+spec:
+  selector:
+    matchLabels:
+      app: book-api
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: book-api
+    spec:
+      containers:
+        - name: mongo
+          image: mongo:latest
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 27017
+          volumeMounts:
+            - name: data
+              mountPath: /data
+              readOnly: false
+      volumes:
+        - name: data
+          persistentVolumeClaim:
+            claimName: mongo-data
+
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: mongo-data
+  labels:
+    app: book-api
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 1Gi
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: mongo
+  labels:
+    app: book-api
+spec:
+  ports:
+    - name: mongo
+      port: 27017
+      targetPort: 27017
+  type: NodePort
+  selector:
+    app: book-api
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: book-api
+spec:
+  selector:
+    matchLabels:
+      app: book-api
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: book-api
+    spec:
+      containers:
+        - name: book-api
+          image: book-api:1.0.0
+          imagePullPolicy: Never
+          ports:
+            - containerPort: 3010
+          volumeMounts:
+            - name: data
+              mountPath: /data
+              readOnly: false
+      volumes:
+        - name: data
+          persistentVolumeClaim:
+            claimName: mongo-data
