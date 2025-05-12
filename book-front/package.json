@@ -5,16 +5,16 @@
   "dependencies": {
     "@ant-design/icons": "^4.2.2",
     "@testing-library/jest-dom": "^4.2.4",
-    "@testing-library/react": "^9.5.0",
+    "@testing-library/react": "^16.0.0",
     "@testing-library/user-event": "^7.2.1",
-    "antd": "^4.6.4",
+    "antd": "^5.12.7",
     "axios": "^0.21.0",
     "fetch": "^1.1.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "react-redux": "^7.2.1",
-    "react-router-dom": "^5.2.0",
-    "react-scripts": "3.4.3",
+    "react-redux": "^9.0.0",
+    "react-router-dom": "^6.4.0",
+    "react-scripts": "5.0.0",
     "redux": "^4.0.5"
   },
   "scripts": {
